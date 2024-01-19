@@ -12,6 +12,7 @@
 <label for="urlInput">Chaturbate link</label>
 <input type="text" id="urlInput" placeholder="https://chaturbate.com/alicepreuoston/">
 <button onclick="generateLinks()">Extract</button>
+<button onclick="clearInput()">Clear</button>
 
 <div id="recubateResult"></div>
 <div id="cbhoursResult"></div>
@@ -52,6 +53,10 @@
     function extractModelName(url) {
         var match = url.match(/\/([^\/]+)\/$/);
         return match ? match[1] : '';
+    }
+
+    function clearInput() {
+        document.getElementById('urlInput').value = '';
     }
 </script>
 
