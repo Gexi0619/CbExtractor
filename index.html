@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaturbate Link Extractor</title>
+</head>
+<body>
+
+<h1>Chaturbate Link Extractor</h1>
+
+<label for="urlInput">Chaturbate link</label>
+<input type="text" id="urlInput" placeholder="https://chaturbate.com/alicepreuoston/">
+<button onclick="generateLinks()">Extract</button>
+
+<div id="recubateResult"></div>
+<div id="cbhoursResult"></div>
+<div id="twitchResult"></div>
+<div id="stripchatResult"></div>
+<div id="bongacamsResult"></div>
+<div id="livejasminResult"></div>
+<div id="camsodaResult"></div>
+<div id="flirt4freeResult"></div>
+<div id="streamateResult"></div>
+
+<script>
+    function generateLinks() {
+        var inputUrl = document.getElementById('urlInput').value;
+        var model_name = extractModelName(inputUrl);
+
+        var recubateLink = 'https://recu.me/performer/' + model_name;
+        var cbhoursLink = 'https://www.cbhours.com/user/' + model_name;
+        var twitchLink = 'https://www.twitch.tv/' + model_name;
+        var stripchatLink = 'https://stripchat.com/' + model_name;
+        var bongacamsLink = 'https://bongacams.com/profile/' + model_name;
+        var livejasminLink = 'https://www.livejasmin.com/en/chat/' + model_name;
+        var camsodaLink = 'https://www.camsoda.com/' + model_name;
+        var flirt4freeLink = 'https://www.flirt4free.com/models/bios/' + model_name;
+        var streamateLink = 'https://www.streamate.com/cam/' + model_name;
+
+        document.getElementById('recubateResult').innerHTML = 'Recubate: ' + '<a href="' + recubateLink + '" target="_blank">' + model_name + ' Recubate</a>';
+        document.getElementById('cbhoursResult').innerHTML = 'CB Hours: ' + '<a href="' + cbhoursLink + '" target="_blank">' + model_name + ' CB Hours</a>';
+        document.getElementById('twitchResult').innerHTML = 'Twitch: ' + '<a href="' + twitchLink + '" target="_blank">' + model_name + ' Twitch</a>';
+        document.getElementById('stripchatResult').innerHTML = 'Stripchat: ' + '<a href="' + stripchatLink + '" target="_blank">' + model_name + ' Stripchat</a>';
+        document.getElementById('bongacamsResult').innerHTML = 'BongaCams: ' + '<a href="' + bongacamsLink + '" target="_blank">' + model_name + ' BongaCams</a>';
+        document.getElementById('livejasminResult').innerHTML = 'LiveJasmin: ' + '<a href="' + livejasminLink + '" target="_blank">' + model_name + ' LiveJasmin</a>';
+        document.getElementById('camsodaResult').innerHTML = 'CamSoda: ' + '<a href="' + camsodaLink + '" target="_blank">' + model_name + ' CamSoda</a>';
+        document.getElementById('flirt4freeResult').innerHTML = 'Flirt4Free: ' + '<a href="' + flirt4freeLink + '" target="_blank">' + model_name + ' Flirt4Free</a>';
+        document.getElementById('streamateResult').innerHTML = 'Streamate: ' + '<a href="' + streamateLink + '" target="_blank">' + model_name + ' Streamate</a>';
+    }
+
+    function extractModelName(url) {
+        var match = url.match(/\/([^\/]+)\/$/);
+        return match ? match[1] : '';
+    }
+</script>
+
+</body>
+</html>
+
